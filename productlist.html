@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+
+          background-color: #f0f0f0;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          min-height: 100vh;
+          cursor: pointer;
+        }
+
+        .container {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          max-width: 1200px;
+
+
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .prodcard {
+          background-color: #fff;
+          border-radius: 10px;
+
+          padding: 20px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s ease-in-out;
+          overflow: hidden;
+        }
+        .prodcard:hover {
+          transform: translateY(-5px);
+        }
+        .prodimage {
+          max-width: 100%;
+          height: auto;
+        }
+        .prodtitle {
+          font-size: 16px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+        .prodprice {
+          font-size: 14px;
+          color: #555;
+          margin-top: 5px;
+        }
+        .viewmore {
+
+          color: #007bff;
+
+          display: block;
+          text-align: center;
+          margin-top: 10px;
+
+
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.2s ease-in-out;
+        }
+        .viewmore:hover {
+          color: #0056b3;
+        }
+  </style>
+
+  <title>Product</title>
+</head>
+<body>
+  <div class="container" id="Container"></div>
+
+  
+    
+
+
+  <script >
+    const gridContainer = document.getElementById("Container");
+    const Product=[
+                    {
+                      "name": "Product 1",
+                      "description": "Fruit",
+                      "price": "₹10",
+                      "image": "product1.jpg"
+                    },
+                    {
+                      "price": "₹10",
+                      "name": "Product 2",
+                      "description": "Fruit",
+                      "image": "product1.jpg"
+                    },
+                    {
+                      "price": "₹10",
+                      "name": "Product 3",
+                      "description": "Fruit",
+                      "image": "product1.jpg"
+                    },
+                    {
+                      "name": "Product 4",
+                      "price": "₹10",
+                      "description": "Fruit",
+                      "image": "product1.jpg"
+                    },
+                    {
+                      "name": "Product 5",
+                      "price": "₹10",
+                      "description": "Chair",
+                      "image": "product2.jpg"
+                    },
+                    {
+                      "name": "Product 6",
+                      "price": "₹10",
+                      "description": "Chair",
+                      "image": "product2.jpg"
+                    },
+                    {
+                      "name": "Product 7",
+                      "price": "₹10",
+                      "description": "Chair",
+                      "image": "product2.jpg"
+                    },
+                    {
+                      "name": "Product 8",
+                      "price": "₹10",
+                      "description": "Chair",
+                      "image": "product2.jpg"
+                    }
+                    
+                  ];
+
+    Product.forEach((product,index) => {
+            const productCard = document.createElement("div");
+            productCard.classList.add("prodcard");
+            
+
+            const image = document.createElement("img");
+            image.src = product.image;
+            image.alt = product.name;
+            image.classList.add("prodimage");
+            
+            const title = document.createElement("div");
+            title.textContent = product.name;
+            title.classList.add("prodtitle");
+            
+            
+            const price = document.createElement("div");
+            price.textContent = product.price;
+            price.classList.add("prodprice");
+
+            const description = document.createElement("div");
+            price.textContent = product.description;
+            price.classList.add("proddescription");
+            
+            const viewMore = document.createElement("a");
+            
+            viewMore.textContent = "View More";
+            viewMore.classList.add("viewmore");
+
+            
+            
+            productCard.appendChild(image);
+            productCard.appendChild(title);
+            productCard.appendChild(price);
+            productCard.appendChild(viewMore);
+            
+            gridContainer.appendChild(productCard);
+          });
+          
+          
+  </script>
+</body>
+</html>
+
